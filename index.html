@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Header -->
+
+        <div class="header">
+            <h1>🎓 Student Management Dashboard</h1>
+            <p>Manage student records efficiently</p>
+        </div>
+
+        <!-- Main Layout -->
+
+        <div class="main-layout">
+
+            <!-- Sidebar -->
+
+            <div class="sidebar">
+
+                <div class="logo">
+                    <div class="logo-icon">🎓</div>
+                    <h3>SMD Dashboard</h3>
+                </div>
+
+                <h3 class="stats-title">Quick Stats</h3>
+
+                <div class="stat-card total">
+                    <span>Total Students</span>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+
+                <div class="stat-card cse">
+                    <span>CSE Students</span>
+                    <h2 id="cseCount">0</h2>
+                </div>
+
+                <div class="stat-card ece">
+                    <span>ECE Students</span>
+                    <h2 id="eceCount">0</h2>
+                </div>
+
+                <div class="stat-card eee">
+                    <span>EEE Students</span>
+                    <h2 id="eeeCount">0</h2>
+                </div>
+
+                <div class="stat-card mech">
+                    <span>MECH Students</span>
+                    <h2 id="mechCount">0</h2>
+                </div>
+
+            </div>
+
+            <!-- Main Content -->
+
+            <div class="content">
+
+                <!-- Add Student Card -->
+
+                <div class="card form-card">
+
+                    <h2>Add New Student</h2>
+
+                    <form id="studentForm">
+
+                        <input type="hidden" id="studentId">
+
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter email address"
+                                required
+                            >
+                        </div>
+
+                        <div class="input-group">
+                            <label for="course">Course</label>
+
+                            <select id="course" required>
+                                <option value="">Select Course</option>
+                                <option value="CSE">CSE</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="MECH">MECH</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="save-btn">
+                            Save Student
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- Student List Card -->
+
+                <div class="card table-card">
+
+                    <h2>All Students</h2>
+
+                    <div class="filters">
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search by name, email or course..."
+                        >
+
+                        <select id="filterCourse">
+                            <option value="all">All Courses</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Course</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="studentTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
